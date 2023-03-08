@@ -16,23 +16,23 @@ services:
     image: vinand/api_yamdb
     restart: always
     volumes:
-      - type: volume
-        source: static_value
-        target: /app/static/
-        volume:
-          nocopy: false
-      - type: volume
-        source: media_value
-        target: /app/media/
-        volume:
-          nocopy: false
+    #  - type: volume
+     #   source: static_value
+      #  target: /app/static/
+       # volume:
+        #  nocopy: false
+    #  - type: volume
+     #   source: media_value
+      #  target: /app/media/
+       # volume:
+        #  nocopy: false
      # - type: bind
       #  source: ../api_yamdb/static/redoc.yaml
        # target: /var/html/static/redoc.yaml
         #volume:
          # nocopy: false
-    #  - static_value:/app/static/
-    #  - media_value:/app/media/
+      - static_value:/app/static/
+      - media_value:/app/media/
     depends_on:
       - db
     env_file:
