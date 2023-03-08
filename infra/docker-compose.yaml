@@ -26,6 +26,11 @@ services:
         target: /app/media/
         volume:
           nocopy: false
+      - type: bind
+        source: ../api_yamdb/static/redoc.yaml
+        target: /var/html/static/redoc.yaml
+        volume:
+          nocopy: false
     #  - static_value:/app/static/
     #  - media_value:/app/media/
     depends_on:
@@ -52,11 +57,11 @@ services:
         target: /var/html/media/
         volume:
           nocopy: false
-      - type: bind
-        source: ../api_yamdb/static/redoc.yaml
-        target: /var/html/static/redoc.yaml
-        volume:
-          nocopy: false
+  #    - type: bind
+   #     source: ../api_yamdb/static/redoc.yaml
+    #    target: /var/html/static/redoc.yaml
+     #   volume:
+      #    nocopy: false
     #  - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     #  - ./static/redoc.yaml:/var/html/static/redoc.yaml
     #  - static_value:/var/html/static/
