@@ -18,12 +18,12 @@ services:
     volumes:
       - type: volume
         source: static_value
-        target: /app/static/
+        target: /app/static
         volume:
           nocopy: false
       - type: volume
         source: media_value
-        target: /app/media/
+        target: /app/media
         volume:
           nocopy: false
     #  - static_value:/app/static/
