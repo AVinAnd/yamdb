@@ -4,11 +4,6 @@ services:
   db:
     image: postgres:13.0-alpine
     volumes:
- #     - type: bind
-  #      source: postgresql_data
-   #     target: /var/lib/postgresql/data/
-    #    volume:
-     #     nocopy: false
       - postgresql_data:/var/lib/postgresql/data/
     env_file:
       - ./.env
@@ -16,21 +11,6 @@ services:
     image: vinand/api_yamdb
     restart: always
     volumes:
-    #  - type: volume
-     #   source: static_value
-      #  target: /app/static/
-       # volume:
-        #  nocopy: false
-    #  - type: volume
-     #   source: media_value
-      #  target: /app/media/
-       # volume:
-        #  nocopy: false
-     # - type: bind
-      #  source: ../api_yamdb/static/redoc.yaml
-       # target: /var/html/static/redoc.yaml
-        #volume:
-         # nocopy: false
       - static_value:/app/static/
       - media_value:/app/media/
     depends_on:
@@ -42,28 +22,7 @@ services:
     ports:
       - "80:80"
     volumes:
-#      - type: bind
- #       source: ./nginx/default.conf
-  #      target: /etc/nginx/conf.d/default.conf
-   #     volume:
-    #      nocopy: false
-     # - type: bind
-      #  source: static_value
-       # target: /var/html/static/
-        #volume:
-         # nocopy: false
- #     - type: bind
-  #      source: media_value
-   #     target: /var/html/media/
-    #    volume:
-     #     nocopy: false
-      #- type: bind
-       # source: ../api_yamdb/static/redoc.yaml
-        #target: /var/html/static/redoc.yaml
-        #volume:
-         # nocopy: false
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-    #  - ./static/redoc.yaml:/var/html/static/redoc.yaml
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     depends_on:
