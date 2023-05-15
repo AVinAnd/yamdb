@@ -61,6 +61,5 @@ docker-compose exec web python manage.py loaddata fixtures.json
 python manage.py runserver
 ```
 Проект доступен по адресу http://51.250.17.151
-## Об авторе
-Андрей Виноградов - студент Яндекс Практикум
-по курсу Python-разработчик
+### Об авторе
+Андрей Виноградов - python-developer, выпускник Яндекс Практикума по курсу Python-разработчик
